@@ -43,6 +43,7 @@ namespace TestApiFakeDB.Controllers
                 return BadRequest();
             }
 
+            // chi la de tang so luong id voi so luong object co hien tai
             product.Id = products.Count + 1;
             products.Add(product);
             return Ok(product);
