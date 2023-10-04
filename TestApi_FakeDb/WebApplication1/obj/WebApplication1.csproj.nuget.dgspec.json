@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ky 6_OJT_Fall 2023\\WorkSpace_ojt\\.NET\\RestFul API\\TestApi\\WebApplication1\\WebApplication1.csproj": {}
+    "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\RestFul_API\\TestApi_FakeDb\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "D:\\Ky 6_OJT_Fall 2023\\WorkSpace_ojt\\.NET\\RestFul API\\TestApi\\WebApplication1\\WebApplication1.csproj": {
+    "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\RestFul_API\\TestApi_FakeDb\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ky 6_OJT_Fall 2023\\WorkSpace_ojt\\.NET\\RestFul API\\TestApi\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\RestFul_API\\TestApi_FakeDb\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "D:\\Ky 6_OJT_Fall 2023\\WorkSpace_ojt\\.NET\\RestFul API\\TestApi\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\RestFul_API\\TestApi_FakeDb\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Ky 6_OJT_Fall 2023\\WorkSpace_ojt\\.NET\\RestFul API\\TestApi\\WebApplication1\\obj\\",
+        "outputPath": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\RestFul_API\\TestApi_FakeDb\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.414\\RuntimeIdentifierGraph.json"
         }
       }
     }
