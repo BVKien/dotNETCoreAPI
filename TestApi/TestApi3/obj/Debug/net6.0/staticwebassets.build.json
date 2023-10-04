@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "AFl1kuE0skyxY3rtQgjQTq7a+LmYSaiMiY6GYcKoS0M=",
+  "Source": "TestApiFakeDB",
+  "BasePath": "_content/TestApiFakeDB",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
