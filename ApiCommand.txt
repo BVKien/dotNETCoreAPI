@@ -1,0 +1,9 @@
+== Install package == Package Manager Console
+Install-Package Microsoft.EntityFrameworkCore.SqlServer
+Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design
+Install-Package Microsoft.EntityFrameworkCore.Tools
+
+=== Scaffold
+dotnet ef dbcontext scaffold "server =ADMIN\SQLEXPRESS; database = ApiDB;uid=sa;pwd=0212;" Microsoft.EntityFrameworkCore.SqlServer --output-dir Models --project {direct}
+
+dotnet ef dbcontext scaffold "server=ADMIN\SQLEXPRESS;database=ApiDB;uid=sa;pwd=0212;" Microsoft.EntityFrameworkCore.SqlServer --output-dir Models --ApiDB1
