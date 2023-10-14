@@ -3,7 +3,17 @@ Application Programing Interface
 GET: read
 POST: add
 PUT: update
+PATCH: update
 DELETE: delete
+
+PUT: Yêu cầu PUT được sử dụng để cập nhật hoặc thay thế hoàn toàn một tài nguyên bằng dữ liệu được gửi kèm. 
+Nếu tài nguyên không tồn tại, nó sẽ được tạo mới với nội dung được cung cấp. 
+Yêu cầu PUT thường yêu cầu gửi toàn bộ thông tin của tài nguyên, kể cả những trường không thay đổi.
+
+PATCH: Yêu cầu PATCH được sử dụng để cập nhật một phần của tài nguyên, 
+chỉ thay đổi những thông tin được gửi kèm trong yêu cầu. 
+Những trường không được cập nhật sẽ giữ nguyên giá trị. 
+Yêu cầu PATCH thường gửi một hoặc một số trường dữ liệu mà bạn muốn cập nhật.
 
 Test
 200 OK – Trả về thành công cho tất cả phương thức
@@ -43,11 +53,29 @@ https://www.youtube.com/watch?v=jruvMHTJLj4&list=PLE5Bje814fYbhdwSHiHN9rlwJlwJ2Y
 - https://www.youtube.com/watch?v=BwACVHB9WYg
 
 
++ Step
+1. Initialize dbcontext:
+private readonly ApiDBContext dbcontext;
+
+2. Constructor for Controllers
+public PersonController(ApiDBContext context)
+{
+    this.dbcontext = context;
+}
+
+3. Code [HttpGet].... Api
+        [HttpGet("/AllPerson")]
+        public ActionResult<IEnumerable<Person>> Get()
+        {
+            var persons = dbcontext.People.ToList();
+            return Ok(persons);
+        }
 
 
-
-
-
++ Constructor 
+- Khởi tạo đối tượng: Constructor tạo ra một đối tượng mới của lớp (instance) và khởi tạo nó với các giá trị ban đầu.
+- Thiết lập giá trị ban đầu: Constructor thường được sử dụng để thiết lập giá trị ban đầu cho các biến thành viên (member variables) của lớp, giúp cho đối tượng có trạng thái khởi tạo đúng và phù hợp.
+- Tương tác với tham số: Constructor có thể nhận tham số đầu vào (arguments) để thiết lập giá trị ban đầu dựa trên các giá trị được cung cấp từ bên ngoài.
 
 
 

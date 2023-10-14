@@ -1,0 +1,11 @@
++ api net core 6 crud
+https://www.youtube.com/watch?v=Fbf_ua2t6v4
+
++ repository design pattern
+https://www.youtube.com/watch?v=8fFBWmbUaIg
+
++ singleton 
+https://www.youtube.com/watch?v=ggqjVuJ0g_8
+
++ design pattern toidicodedao
+https://www.youtube.com/watch?v=eiWnblyjw58&t=4s
