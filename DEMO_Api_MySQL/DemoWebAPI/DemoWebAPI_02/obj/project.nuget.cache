@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZvTByvG69rA6cSL5Ner5vSYyJi1sidN04lWu5aTCYpVlMtZKTsKUDN67nzX+H4vCOiXupA3VnnVnQ9ko/waY6w==",
+  "dgSpecHash": "md1VJWZ7oZC7OasSMNyEYGU93TVh1b6JVLgnAKEz/3OS5GDiNCOWXp5CZ+lew/H7eapY6lEnNrN+05OVGO6nzQ==",
   "success": true,
-  "projectFilePath": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\DEMO\\DemoWebAPI\\DemoWebAPI_02\\DemoWebAPI_02.csproj",
+  "projectFilePath": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\RestFul_API\\DEMO_Api_MySQL\\DemoWebAPI\\DemoWebAPI_02\\DemoWebAPI_02.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.21\\microsoft.entityframeworkcore.6.0.21.nupkg.sha512",

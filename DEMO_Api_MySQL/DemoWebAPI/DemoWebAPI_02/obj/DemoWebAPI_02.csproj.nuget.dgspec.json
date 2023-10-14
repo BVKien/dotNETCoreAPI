@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\DEMO\\DemoWebAPI\\DemoWebAPI_02\\DemoWebAPI_02.csproj": {}
+    "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\RestFul_API\\DEMO_Api_MySQL\\DemoWebAPI\\DemoWebAPI_02\\DemoWebAPI_02.csproj": {}
   },
   "projects": {
-    "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\DEMO\\DemoWebAPI\\DemoWebAPI_02\\DemoWebAPI_02.csproj": {
+    "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\RestFul_API\\DEMO_Api_MySQL\\DemoWebAPI\\DemoWebAPI_02\\DemoWebAPI_02.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\DEMO\\DemoWebAPI\\DemoWebAPI_02\\DemoWebAPI_02.csproj",
+        "projectUniqueName": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\RestFul_API\\DEMO_Api_MySQL\\DemoWebAPI\\DemoWebAPI_02\\DemoWebAPI_02.csproj",
         "projectName": "DemoWebAPI_02",
-        "projectPath": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\DEMO\\DemoWebAPI\\DemoWebAPI_02\\DemoWebAPI_02.csproj",
+        "projectPath": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\RestFul_API\\DEMO_Api_MySQL\\DemoWebAPI\\DemoWebAPI_02\\DemoWebAPI_02.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\DEMO\\DemoWebAPI\\DemoWebAPI_02\\obj\\",
+        "outputPath": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\RestFul_API\\DEMO_Api_MySQL\\DemoWebAPI\\DemoWebAPI_02\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
