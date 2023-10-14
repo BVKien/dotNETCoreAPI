@@ -1,0 +1,89 @@
++ Thời hạn: 1 tháng
+- 13/10 - 13/11 - 2023
+--------------------------------------------------------------------------------
++ Tên dự án: Online Learning System
+--------------------------------------------------------------------------------
++ Yêu cầu dự án:
+- Nghiên cứu tìm hiểu về các loại cơ sỏ dữ liệu(oracle,mysql,sql server,monggodb)
+- Cài đặt ít nhất 3 CSDL + tạo database + tạo bảng 
+- Thực hành thêm sửa xóa dữ liệu bằng tool và PL/SQL
+
+- Viết bằng API 
+- Viết API bằng ngôn ngữ Java và .Net
+- Bảo mật API 
+
+- Nghiên cứu xây dựng cộng tự động (auto job)
+- Xây dựng tool xử lý dữ liệu bằng java và .NET
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
++ Công nghệ và ngôn ngữ: 
+-- Front end: 
+- HTML
+- CSS
+- JS 
+- ReactJs
+
+-- Back end: 
+- .NET
+- Java để làm gì chưa rõ
+
+-- Database:
+- MySQL Workbench
+- MongoDB
+
+-- Test:
+- Postman
+
+-- CICD
+- Git
+- Github
+
+-- Mô hình:
+- MVC
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
++ Quan trọng: 
+- Code theo khung design pattern
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
++ Chức năng:
+--- Role: Admin, User
+-- Admin: 
+- Quản lý user
+- Quản lý các lộ trình 
+- Quản lý các khóa học
+- Quản lý các bài học
+- Quản lý và duyệt
+
+-- User: 
+- Home
+- Lộ trình
+- Bài viết 
+- Đăng ký khóa học cóa mất tiền 
+
+--------------------------------------------------------------------------------
++ Thời hạn: 1 tháng
+- 13/10 - 13/11 - 2023
++ 13/10/2023: 11:45 PM
+- Kết nối VS 2022 với MySQL Workbench: ok
+- làm test chức năng với db: hoàn thiện ngay
+- làm demo UI - Home: hoàn thiện ngay
+
++ 14/10/2023
+- đang làm nhiệm vụ trong to to list
+- vdde: làm sao để api vẫn lưu giữ dữ liệu cũ 
+khi thực hiện các http mà không cần phải add hoàn toàn mới ?
+
+
+
+
+
+
+
+
+
+
+
+
+
