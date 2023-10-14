@@ -4,5 +4,7 @@
 - ContactsAPI
 - HotelbookingAPI
 - TestAPI
-# SQL SERVER - DB Project:
+# SQL SERVER:
 - ApiDb
+# MySQL Workbench:
+- DEMO_Api_MySQL
