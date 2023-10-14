@@ -5,8 +5,8 @@
 - HotelbookingAPI
 - TestAPI
 # SQL SERVER:
-- ApiDb
+- Api_Db_SqlServer
 # MySQL Workbench:
 - DEMO_Api_MySQL
-# Design Pattern:
+# API_Design Pattern:
 - Api_SingleTonPattern
