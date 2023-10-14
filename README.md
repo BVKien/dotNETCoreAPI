@@ -8,3 +8,5 @@
 - ApiDb
 # MySQL Workbench:
 - DEMO_Api_MySQL
+# Design Pattern:
+- Api_SingleTon_Pattern
