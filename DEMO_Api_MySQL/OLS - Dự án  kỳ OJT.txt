@@ -72,8 +72,16 @@
 
 + 14/10/2023
 - đang làm nhiệm vụ trong to to list
+- api test show lên là ok, vấn đề giờ phải cho nó hiển thị đúng thứ mình cần 
+ví dụ như user ko thể để id phải để user name 
+
+- đang làm nhiệm vụ trong to to list
 - vdde: làm sao để api vẫn lưu giữ dữ liệu cũ 
 khi thực hiện các http mà không cần phải add hoàn toàn mới ?
+
++ 15/10/2023
+- đang học mongodb cơ bản
+- xong mông code api
 
 
 
