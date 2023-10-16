@@ -24,14 +24,9 @@ namespace DemoWebAPI_02.Controllers
         public ActionResult<IEnumerable<User>> Get()
         {
             var users = dbContext.Users.ToList();
-
-            // new
-            // Set the response header to allow requests from http://localhost:3000
-            Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:3000");
-            // end new 
-
+            //Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:3000");
             return Ok(users);
-            //return Ok(courses).WithHeaders(new { Access_Control_Allow_Origin = "http://localhost:3000" });
         }
+
     }
 }

@@ -24,10 +24,8 @@ namespace DemoWebAPI_02.Controllers
         {
             var courses = dbContext.Courses.ToList();
 
-            // new
             // Set the response header to allow requests from http://localhost:3000
             Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:3000");
-            // end new 
 
             return Ok(courses);
             //return Ok(courses).WithHeaders(new { Access_Control_Allow_Origin = "http://localhost:3000" });
@@ -42,6 +40,9 @@ namespace DemoWebAPI_02.Controllers
 
             // check null
             if (course == null) return NotFound();
+
+            // Set the response header to allow requests from http://localhost:3000
+            Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:3000");
 
             return Ok(course);
         }
