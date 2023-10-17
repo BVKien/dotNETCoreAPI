@@ -20,6 +20,7 @@ namespace Api_03.Repositories
 }
 */
 
+using Api_03.DTO;
 using Api_03.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,9 +36,30 @@ namespace Api_03.Repositories
             this.db = db;
         }
 
+        /*
         public IEnumerable<Course> GetCourses()
         {
             return db.Courses.ToList();
+        }
+        */
+
+        public IEnumerable<CourseDTO> GetCourses()
+        {
+            var courseDtos = db.Courses
+                .Join(
+                    db.Categories,
+                    course => course.Category,
+                    category => category.Id,
+                    (course, category) => new CourseDTO
+                    {
+                        Id = course.Id,
+                        Name = course.Name,
+                        //Category = course.Category,
+                        CategoryName = category.Name
+                    })
+                .ToList();
+
+            return courseDtos;
         }
 
         public Course GetCourseById(int id)
@@ -49,6 +71,26 @@ namespace Api_03.Repositories
         {
             db.Courses.Add(course);
             db.SaveChanges();
+        }
+
+        public void DeleteCourse(Course course)
+        {
+            db.Courses.Remove(course);
+            db.SaveChanges();
+        }
+
+        public void UpdateCourse(Course course)
+        {
+            var existingCourse = db.Courses.FirstOrDefault(c => c.Id == course.Id);
+
+            if (existingCourse != null)
+            {
+                // Cập nhật thông tin của khóa học
+                existingCourse.Name = course.Name;
+                existingCourse.Category = course.Category;
+
+                db.SaveChanges();
+            }
         }
 
     }

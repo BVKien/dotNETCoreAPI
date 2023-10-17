@@ -1,0 +1,6 @@
++ phải giữ nguyên id của category
++ token
++ injection ok rồi mai xem lại, đơn giản là config lại program.cs
++ dto, repository
++ sql
++ giao diện
