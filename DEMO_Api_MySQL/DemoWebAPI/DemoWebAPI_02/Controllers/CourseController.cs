@@ -1,6 +1,7 @@
 ﻿using DemoWebAPI_02.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DemoWebAPI_02.Controllers
 {
@@ -62,6 +63,7 @@ namespace DemoWebAPI_02.Controllers
             return Ok(course);
         }
 
+        /*
         // update 
         [HttpPut("{id}")]
         public ActionResult Put(int id, Course course)
@@ -85,6 +87,45 @@ namespace DemoWebAPI_02.Controllers
             dbContext.SaveChanges();
 
             // tra ve 204 No Content – Trả về khi Resource xoá thành công.
+            return NoContent();
+        }
+        */
+
+        [HttpPut("{id}")]
+        public ActionResult Put(int id, Course course)
+        {
+            if (course == null)
+            {
+                return BadRequest("Invalid course data.");
+            }
+
+            var recentCourse = dbContext.Courses.Find(id);
+            if (recentCourse == null)
+            {
+                return NotFound();
+            }
+
+            // Update course properties
+            recentCourse.Name = course.Name;
+            recentCourse.Image = course.Image;
+            recentCourse.CourseInfo = course.CourseInfo;
+            recentCourse.Description = course.Description;
+            recentCourse.Status = course.Status;
+            recentCourse.UserUserId = course.UserUserId;
+            recentCourse.CategoryCategoryId = course.CategoryCategoryId;
+            recentCourse.FeeStatus = course.FeeStatus;
+            recentCourse.VideoIntro = course.VideoIntro;
+
+            try
+            {
+                dbContext.SaveChanges();
+            }
+            catch (DbUpdateException ex)
+            {
+                // Log the exception or handle accordingly
+                return StatusCode(500, "An error occurred while updating the course.");
+            }
+
             return NoContent();
         }
 
