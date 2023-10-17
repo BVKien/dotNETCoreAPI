@@ -1,6 +1,9 @@
-﻿using Api_03.Models;
+﻿/*
+using Api_03.Models;
+using Api_03.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Api_03.Repositories;
 
 namespace Api_03.Controllers
 {
@@ -8,19 +11,132 @@ namespace Api_03.Controllers
     [ApiController]
     public class CourseController : ControllerBase
     {
+        private readonly CourseRepository repository;
+
+        public CourseController(CourseRepository repository)
+        {
+            this.repository = repository;
+        }
+
+        // get / all courses
+        [HttpGet]
+        public ActionResult<IEnumerable<Course>> Get()
+        {
+            var courses = repository.GetCourses();
+            return Ok(courses);
+        }
+
+    }
+}
+*/
+
+using Api_03.DTO;
+using Api_03.Models;
+using Api_03.Repositories;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+
+namespace Api_03.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CourseController : ControllerBase
+    {
+        private readonly CourseRepository repository;
+
+        public CourseController(CourseRepository repository)
+        {
+            this.repository = repository;
+        }
+
+        // GET: api/course
+        [HttpGet]
+        public ActionResult<IEnumerable<Course>> Get()
+        {
+            var courses = repository.GetCourses();
+            return Ok(courses);
+        }
+
+        // GET: api/course/{id}
+        [HttpGet("{id}")]
+        public ActionResult<Course> GetById(int id)
+        {
+            var course = repository.GetCourseById(id);
+
+            if (course == null)
+            {
+                return NotFound(); // Trả về 404 Not Found nếu không tìm thấy
+            }
+
+            return Ok(course);
+        }
+
+        /*
+        // POST: api/course
+        [HttpPost]
+        public ActionResult<Course> Post([FromBody] Course course)
+        {
+            if (course == null)
+            {
+                return BadRequest("Invalid data"); // Trả về lỗi BadRequest nếu dữ liệu không hợp lệ
+            }
+
+            // Thêm khóa học mới vào cơ sở dữ liệu
+            repository.AddCourse(course);
+            return CreatedAtAction(nameof(GetById), new { id = course.Id }, course);
+        }
+        */
+
+        [HttpPost]
+        public ActionResult<Course> Post([FromBody] CourseDTO courseDto)
+        {
+            if (courseDto == null)
+            {
+                return BadRequest("Invalid data");
+            }
+
+            // Tạo mới đối tượng Course từ DTO
+            var course = new Course
+            {
+                Id = courseDto.Id,
+                Name = courseDto.Name,
+                Category = courseDto.Category
+            };
+
+            // Thêm khóa học mới vào cơ sở dữ liệu
+            repository.AddCourse(course);
+
+            // Trả về mã 201 Created và đường dẫn đến khóa học vừa tạo
+            return CreatedAtAction(nameof(GetById), new { id = course.Id }, course);
+        }
+
+    }
+}
+
+/*
+ * namespace Api_03.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CourseController : ControllerBase
+    {
         private readonly ApiDB_03Context db;
+
         public CourseController(ApiDB_03Context db)
         {
             this.db = db;
         }
-        // http
-        // get all 
-        [HttpGet]
-        public ActionResult<IEnumerable<Course>> Get()
-        {
-            var course = db.Courses.ToList();
-            return Ok(course);
-        }
+
+        //// http
+        //// get all 
+        //[HttpGet]
+        //public ActionResult<IEnumerable<Course>> Get()
+        //{
+        //    var course = db.Courses.ToList();
+        //    return Ok(course);
+        //}
+
+        // get / all
 
         // get by id 
         [HttpGet("{id}")]
@@ -64,13 +180,13 @@ namespace Api_03.Controllers
 
         // add
         [HttpPost]
-        public ActionResult<Course> Post(Course course)
+        public ActionResult<Course> Post([FromBody] Course course)
         {
             // check null -> bad request 
-            if(course == null) return BadRequest();
+            if(course == null || !ModelState.IsValid) return BadRequest("Invalid data");
 
-            // add
-            course.Id = db.Courses.Count() + 1;
+            //// add
+            //course.Id = db.Courses.Count() + 1;
             db.Add(course);
             db.SaveChanges();
 
@@ -79,3 +195,4 @@ namespace Api_03.Controllers
 
     }
 }
+ */

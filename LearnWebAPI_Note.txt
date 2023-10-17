@@ -52,6 +52,8 @@ https://www.youtube.com/watch?v=jruvMHTJLj4&list=PLE5Bje814fYbhdwSHiHN9rlwJlwJ2Y
 - https://www.youtube.com/watch?v=puCAD7zyRNk
 - https://www.youtube.com/watch?v=BwACVHB9WYg
 
++ about dto and repository 
+https://www.youtube.com/watch?v=ZXdFisA_hOY&t=46s
 
 + Step
 1. Initialize dbcontext:
