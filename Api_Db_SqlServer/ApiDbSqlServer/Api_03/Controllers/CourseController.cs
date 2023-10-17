@@ -42,6 +42,9 @@ namespace Api_03.Controllers
     [ApiController]
     public class CourseController : ControllerBase
     {
+
+        private readonly ApiDB_03Context db;
+
         private readonly CourseRepository repository;
 
         public CourseController(CourseRepository repository)
@@ -100,7 +103,7 @@ namespace Api_03.Controllers
             {
                 Id = courseDto.Id,
                 Name = courseDto.Name,
-                Category = courseDto.Category
+                //Category = courseDto.Category
             };
 
             // Thêm khóa học mới vào cơ sở dữ liệu
@@ -110,6 +113,50 @@ namespace Api_03.Controllers
             return CreatedAtAction(nameof(GetById), new { id = course.Id }, course);
         }
 
+
+        [HttpDelete("{id}")]
+        public ActionResult Delete(int id)
+        {
+            var course = repository.GetCourseById(id);
+
+            if (course == null)
+            {
+                return NotFound(); // Trả về mã 404 Not Found nếu không tìm thấy khóa học
+            }
+
+            repository.DeleteCourse(course);
+            return NoContent(); // Trả về mã 204 No Content sau khi xóa thành công
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult Update(int id, [FromBody] CourseDTO courseDto)
+        {
+            if (courseDto == null || id != courseDto.Id)
+            {
+                return BadRequest("Invalid data");
+            }
+
+            var existingCourse = repository.GetCourseById(id);
+
+            if (existingCourse == null)
+            {
+                return NotFound(); // Trả về mã 404 Not Found nếu không tìm thấy khóa học
+            }
+
+            // Cập nhật thông tin của khóa học từ DTO
+            existingCourse.Name = courseDto.Name;
+
+            // Lấy Category theo CategoryName (giữ nguyên nếu không tìm thấy)
+            var category = db.Categories.FirstOrDefault(c => c.Name == courseDto.CategoryName);
+            if (category != null)
+            {
+                existingCourse.Category = category.Id;
+            }
+
+            repository.UpdateCourse(existingCourse);
+
+            return NoContent(); // Trả về mã 204 No Content sau khi cập nhật thành công
+        }
     }
 }
 
