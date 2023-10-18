@@ -57,6 +57,11 @@ namespace Api_03.Controllers
         public ActionResult<IEnumerable<Course>> Get()
         {
             var courses = repository.GetCourses();
+
+            // Set the response header to allow requests from http://localhost:3000
+            Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:3000");
+            // end
+
             return Ok(courses);
         }
 
@@ -103,6 +108,7 @@ namespace Api_03.Controllers
             {
                 Id = courseDto.Id,
                 Name = courseDto.Name,
+                Category = courseDto.Category,
                 //Category = courseDto.Category
             };
 
@@ -128,6 +134,7 @@ namespace Api_03.Controllers
             return NoContent(); // Trả về mã 204 No Content sau khi xóa thành công
         }
 
+        /*
         [HttpPut("{id}")]
         public ActionResult Update(int id, [FromBody] CourseDTO courseDto)
         {
@@ -144,19 +151,47 @@ namespace Api_03.Controllers
             }
 
             // Cập nhật thông tin của khóa học từ DTO
+            existingCourse.Id = courseDto.Id;
             existingCourse.Name = courseDto.Name;
+            existingCourse.Category = courseDto.Category;
 
             // Lấy Category theo CategoryName (giữ nguyên nếu không tìm thấy)
-            var category = db.Categories.FirstOrDefault(c => c.Name == courseDto.CategoryName);
-            if (category != null)
-            {
-                existingCourse.Category = category.Id;
-            }
+            //var category = db.Categories.FirstOrDefault(c => c.Name == courseDto.CategoryName);
+            //if (category != null)
+            //{
+            //    existingCourse.Category = category.Id;
+            //}
 
             repository.UpdateCourse(existingCourse);
 
             return NoContent(); // Trả về mã 204 No Content sau khi cập nhật thành công
         }
+        */
+
+        [HttpPut("{id}")]
+        public ActionResult Update(int id, [FromBody] CourseDTO courseDto)
+        {
+            if (courseDto == null || id != courseDto.Id)
+            {
+                return BadRequest("Invalid data");
+            }
+
+            var existingCourse = repository.GetCourseById(id);
+
+            if (existingCourse == null)
+            {
+                return NotFound(); // Trả về mã 404 Not Found nếu không tìm thấy khóa học
+            }
+
+            existingCourse.Id = courseDto.Id;
+            existingCourse.Name = courseDto.Name;
+            existingCourse.Category = courseDto.Category;
+
+            repository.UpdateCourse(existingCourse);
+
+            return NoContent(); // Trả về mã 204 No Content sau khi cập nhật thành công
+        }
+
     }
 }
 

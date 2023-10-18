@@ -54,8 +54,8 @@ namespace Api_03.Repositories
                     {
                         Id = course.Id,
                         Name = course.Name,
-                        //Category = course.Category,
-                        CategoryName = category.Name
+                        Category = course.Category,
+                        //CategoryName = category.Name
                     })
                 .ToList();
 
@@ -79,6 +79,7 @@ namespace Api_03.Repositories
             db.SaveChanges();
         }
 
+        /*
         public void UpdateCourse(Course course)
         {
             var existingCourse = db.Courses.FirstOrDefault(c => c.Id == course.Id);
@@ -86,8 +87,25 @@ namespace Api_03.Repositories
             if (existingCourse != null)
             {
                 // Cập nhật thông tin của khóa học
+                existingCourse.Id = course.Id;
                 existingCourse.Name = course.Name;
                 existingCourse.Category = course.Category;
+
+                db.SaveChanges();
+            }
+        }
+        */
+
+        public void UpdateCourse(Course updatedCourse)
+        {
+            var existingCourse = db.Courses.FirstOrDefault(c => c.Id == updatedCourse.Id);
+
+            if (existingCourse != null)
+            {
+                // Cập nhật thông tin của khóa học
+                existingCourse.Id = updatedCourse.Id;
+                existingCourse.Name = updatedCourse.Name;
+                existingCourse.Category = updatedCourse.Category;
 
                 db.SaveChanges();
             }
