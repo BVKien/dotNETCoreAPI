@@ -47,7 +47,22 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApiDB_03Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ApiDB_03")));
 
+// config repository
 builder.Services.AddScoped<CourseRepository>();  // Đăng ký repository
+// end 
+
+// config cros new 3000
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins("http://localhost:3000")
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+               .AllowCredentials(); // Allow credentials (cookies, authorization headers)
+    });
+});
+// end
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -61,6 +76,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// CROS
+app.UseCors();
+// end
+
 
 app.UseHttpsRedirection();
 

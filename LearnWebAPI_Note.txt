@@ -1,3 +1,4 @@
+----------------------------------------------------------------------------
 Application Programing Interface
 
 GET: read
@@ -14,7 +15,9 @@ PATCH: Yêu cầu PATCH được sử dụng để cập nhật một phần c�
 chỉ thay đổi những thông tin được gửi kèm trong yêu cầu. 
 Những trường không được cập nhật sẽ giữ nguyên giá trị. 
 Yêu cầu PATCH thường gửi một hoặc một số trường dữ liệu mà bạn muốn cập nhật.
+----------------------------------------------------------------------------
 
+----------------------------------------------------------------------------
 Test
 200 OK – Trả về thành công cho tất cả phương thức
 201 Created – Trả về khi một Resource được tạo thành công.
@@ -29,7 +32,9 @@ Test
 415 Unsupported Media Type – Không hỗ trợ kiểu Resource này.
 422 Unprocessable Entity – Dữ liệu không được xác thực.
 429 Too Many Requests – Request bị từ chối do bị giới hạn.
+----------------------------------------------------------------------------
 
+----------------------------------------------------------------------------
 + What is API?: 
 https://www.youtube.com/watch?v=JUvsdFWL7WM
 - Khái niệm: API là một tập hợp các commands, functions, protocols, objects, .... 
@@ -55,6 +60,12 @@ https://www.youtube.com/watch?v=jruvMHTJLj4&list=PLE5Bje814fYbhdwSHiHN9rlwJlwJ2Y
 + about dto and repository 
 https://www.youtube.com/watch?v=ZXdFisA_hOY&t=46s
 
++ 
+https://www.youtube.com/watch?v=ZXdFisA_hOY&t=46s
+
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
 + Step
 1. Initialize dbcontext:
 private readonly ApiDBContext dbcontext;
