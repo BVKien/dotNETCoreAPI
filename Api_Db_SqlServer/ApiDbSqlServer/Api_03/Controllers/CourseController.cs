@@ -1,36 +1,4 @@
-﻿/*
-using Api_03.Models;
-using Api_03.Repositories;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Api_03.Repositories;
-
-namespace Api_03.Controllers
-{
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CourseController : ControllerBase
-    {
-        private readonly CourseRepository repository;
-
-        public CourseController(CourseRepository repository)
-        {
-            this.repository = repository;
-        }
-
-        // get / all courses
-        [HttpGet]
-        public ActionResult<IEnumerable<Course>> Get()
-        {
-            var courses = repository.GetCourses();
-            return Ok(courses);
-        }
-
-    }
-}
-*/
-
-using Api_03.DTO;
+﻿using Api_03.DTO;
 using Api_03.Models;
 using Api_03.Repositories;
 using Microsoft.AspNetCore.Mvc;

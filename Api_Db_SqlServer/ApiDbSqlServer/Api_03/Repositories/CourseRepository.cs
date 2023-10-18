@@ -27,7 +27,7 @@ using System.Linq;
 
 namespace Api_03.Repositories
 {
-    public class CourseRepository
+    public class CourseRepository : ICourseRepository
     {
         private readonly ApiDB_03Context db;
 
