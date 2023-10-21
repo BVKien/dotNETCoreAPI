@@ -1,1 +1,18 @@
 + test API - ok
+
+            var courses = db.Courses.Select(c => new CourseDTO
+            {
+                CourseId = c.CourseId,
+                CourseName = c.CourseName,
+                Description = c.Description,
+                CourseInfo = c.CourseInfo,
+                Image = c.Image,
+                VideoIntro = c.VideoIntro,
+                Fee = c.Fee,
+                Status = c.Status,
+                CategoryCategoryId = c.CategoryCategoryId,
+                UserUserId = c.UserUserId
+            }).ToList();
+
+// Configure repository
+builder.Services.AddScoped<ICourseRepository, CourseRepository>();
