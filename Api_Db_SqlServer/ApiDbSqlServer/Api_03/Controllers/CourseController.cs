@@ -27,7 +27,7 @@ namespace Api_03.Controllers
             var courses = repository.GetCourses();
 
             // Set the response header to allow requests from http://localhost:3000
-            Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:3000");
+            //Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:3001");
             // end
 
             return Ok(courses);

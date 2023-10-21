@@ -22,6 +22,18 @@ builder.Services.AddDbContext<f8dbContext>(options =>
 // Config repository
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 
+// Config Cors reactjs default port 3000
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins("http://localhost:3000")
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+               .AllowCredentials(); // Allow credentials (cookies, authorization headers)
+    });
+});
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -34,6 +46,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// CROS - Config Cors reactjs default port 3000
+app.UseCors();
 
 app.UseHttpsRedirection();
 
