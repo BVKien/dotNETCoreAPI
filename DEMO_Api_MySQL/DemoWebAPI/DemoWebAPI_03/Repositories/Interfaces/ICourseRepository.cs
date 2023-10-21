@@ -5,6 +5,10 @@ namespace DemoWebAPI_03.Repositories.Interfaces
 {
     public interface ICourseRepository
     {
-        IEnumerable<CourseDTO> GetAll();
+        IEnumerable<CourseDTO> GetAllCourses();
+        CourseDTO GetCourseById(int id);
+        void InsertCourse(CourseDTO courseDTO);
+        void UpdateCourse(CourseDTO courseDTO);
+        void DeleteCourse(int CourseId);
     }
 }

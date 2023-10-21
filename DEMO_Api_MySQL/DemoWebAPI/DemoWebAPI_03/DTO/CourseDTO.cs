@@ -1,5 +1,4 @@
-﻿using DemoWebAPI_03.Models;
-namespace DemoWebAPI_03.DTO
+﻿namespace DemoWebAPI_03.DTO
 {
     public class CourseDTO
     {
