@@ -16,3 +16,6 @@
 
 // Configure repository
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+
+
++ commit vui cho qua ngay :v 
